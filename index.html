@@ -1,117 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LetsCinema — The trusted name for cinema updates & box office data</title>
-  <meta name="description" content="LetsCinema — The trusted name for cinema updates & box office data." />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LetsCinema — The trusted name for cinema updates & box office data</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:linear-gradient(135deg,#083477,#0b53b3 50%,#1364d8);font-family:'Montserrat',sans-serif;color:#fff;}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 50px;background:rgba(7,31,74,0.9);position:sticky;top:0;z-index:10;}
+header img{height:60px;}
+nav a{color:#fff;margin-left:20px;text-decoration:none;font-weight:600;}
+.hero{text-align:center;padding:100px 20px 40px;}
+.hero h1{font-size:48px;font-weight:800;margin-bottom:10px;}
+.hero p{font-size:18px;max-width:700px;margin:0 auto 20px;}
+.socials{margin-top:20px;display:flex;justify-content:center;gap:16px;}
+.socials a svg{fill:#fff;width:28px;height:28px;}
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;padding:40px 50px;}
+.card{background:rgba(10,45,99,0.6);border:1px solid #1b66d2;border-radius:10px;padding:20px;box-shadow:0 8px 20px rgba(0,0,0,0.25);}
+.card h3{margin:0 0 10px;}
+.card p{margin:0 0 15px;font-size:15px;opacity:0.9;}
+footer{text-align:center;padding:40px 20px;background:#061a3e;}
+.container{width:min(1200px,92%);margin-inline:auto;}
+</style>
+
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <img src="assets/logo.jpg" alt="LetsCinema logo" />
-        <h1>LetsCinema</h1>
-      </div>
-      
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html" class="">About</a>
-      <a href="contact.html" class="">Contact</a>
-    </nav>
-    </div>
-  </header>
-  <section class="hero">
-    <div class="container">
-      <span class="kicker">South Indian & Indian Cinema • Kollywood • Tollywood • Mollywood • Sandalwood • Bollywood</span>
-      <h1>The trusted name for cinema updates & box office data.</h1>
-      <p>Breaking headlines, verified trends, casting updates, music drops and hard-to-get industry intel — all in one clean feed.</p>
-    </div>
-  </section>
-  <main>
-    <div class="container">
-      
-    <h3 class="section-title">Latest Highlights</h3>
-    
-<div class="grid cards">
-  <article class="card">
-    <div class="meta">7h • Originals / Series</div>
-    <h4>Operation Safed Sagar — coming soon on Netflix</h4>
-    <p>The untold story of the Kargil War from the Indian Air Force’s perspective. Directed by <strong>Onir</strong>; produced by <strong>Abhishek Singh</strong>, <strong>Karan Singh</strong> & <strong>Kushal Srivastava</strong>. Netflix confirms it’s “coming soon”.</p>
-  </article>
-  <article class="card">
-    <div class="meta">7h • Box Office</div>
-    <h4><span class="badge">#DiesIrae</span> surges — 2-day WW gross crosses ₹25 Cr</h4>
-    <p>Excellent hold with <em>Day 2 &gt;&gt;&gt; Day 1</em>. Malayalam horror continues to trend on strong WOM.</p>
-  </article>
-  <article class="card">
-    <div class="meta">8h • Ticketing Pulse (BookMyShow)</div>
-    <h4>Last 24 hours — tickets sold (latest releases)</h4>
-    <p>#DiesIrae (D2) — 246.95K 🔥🔥🔥🔥<br>#BahubaliTheEpic (D2) — 128.97K 🔥🔥<br>#MassJathara (D2) — 60.7K 👍<br>#AanPaavamPollathathu (D2) — 37.2K 🔥<br>#Bison (D16) — 30.55K 🔥<br>#Aaryan (D2) — 27.66K 👍</p>
-  </article>
-  <article class="card">
-    <div class="meta">18h • Spotlight</div>
-    <h4>Happy Birthday to the King — <strong>Shah Rukh Khan</strong> 👑</h4>
-    <p>The undisputed King of Entertainment turns a year older — celebrations across fan clubs and industry circles.</p>
-  </article>
-  <article class="card">
-    <div class="meta">19h • Music • Streaming</div>
-    <h4>Top 5 Indian artists on Spotify (lifetime streams)</h4>
-    <p>1) Arijit Singh — 30.4B<br>2) Pritam — 24.5B<br>3) Anirudh — 13.1B<br>4) Shreya Ghoshal — 12.9B<br>5) A.R. Rahman — 11.6B</p>
-  </article>
-  <article class="card">
-    <div class="meta">19h • Edit Watch</div>
-    <h4><span class="badge">#Aaryan</span> — climax re-edited</h4>
-    <p>Runtime of the climax trimmed from 9 minutes to 4 minutes for sharper pacing.</p>
-  </article>
-  <article class="card">
-    <div class="meta">21h • Music</div>
-    <h4>Two days, two banger tracks — one ROCKSTAR 👑</h4>
-    <p>#DC #KING — <strong>@anirudhofficial</strong> delivers back-to-back drops.</p>
-  </article>
-  <article class="card">
-    <div class="meta">21h • Weekend Recco</div>
-    <h4><span class="badge">#Vash Level 2</span> is now on Netflix</h4>
-    <p>Horror sequel with darker turns and eerie visuals. Weekend watch locked.</p>
-  </article>
-  <article class="card">
-    <div class="meta">22h • Industry</div>
-    <h4>Netflix opens a second India office — Hyderabad (Hi-Tec City)</h4>
-    <p>AP–TS strengthens as a South India power hub with Netflix’s new base joining Mumbai.</p>
-  </article>
-  <article class="card">
-    <div class="meta">22h • Composer Line-up</div>
-    <h4>Anirudh’s upcoming films</h4>
-    <p>#LoveInsuranceKompany · #JanaNayagan · #Magic · #TheParadise · #Toxic · #DC · #Jailer2 · #AK64 · #Arasan · #KING</p>
-  </article>
-  <article class="card">
-    <div class="meta">23h • Opening</div>
-    <h4><span class="badge">#DiesIrae</span> — Day 1 WW gross ₹11.5 Cr</h4>
-    <p>Strong start; weekend loading with positive word of mouth.</p>
-  </article>
-  <article class="card">
-    <div class="meta">Countdown • Fan Watch</div>
-    <h4>Under 69 days to <span class="badge">#JanaNayagan</span> (Thalapathy 69)</h4>
-    <p>Community countdown ramps up as title chatter peaks.</p>
-  </article>
-</div>
-
-    <h3 class="section-title">Trending Now</h3>
-    <div class="grid cards">
-      <article class="card"><h4>#KingKhan</h4><p>Title reveal + teaser chatter surges with SRK’s birthday wave.</p></article>
-      <article class="card"><h4>#DC</h4><p>Lokesh Kanagaraj appears as Devadas in Arun Matheswaran’s #DC — produced by Sun Pictures.</p></article>
-      <article class="card"><h4>Lokah (2025)</h4><p>Viral meme moment — “no traffic in Bengaluru” jokes flood timelines.</p></article>
-    </div>
-    
-    </div>
-  </main>
-  <footer>
-    <div class="container">
-      <p><span class="badge">contact@letscinema.com</span></p>
-      <small>© 2025 LetsCinema — The trusted name for cinema updates &amp; box office data.</small>
-    </div>
-  </footer>
+<header>
+  <img src="assets/logo.jpg" alt="LetsCinema Logo">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<section class="hero">
+  <h1>The trusted name for cinema updates & box office data.</h1>
+  <p>Bringing you the latest from Kollywood, Tollywood, Mollywood & Bollywood — verified numbers, film news, and everything trending in Indian cinema.</p>
+  <div class="socials">
+    <a href="https://instagram.com/letscinema" target="_blank" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3zm5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.5a1 1 0 100 2 1 1 0 000-2z"/></svg>
+    </a>
+    <a href="https://x.com/letscinema" target="_blank" aria-label="X (Twitter)">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20" stroke="#fff" stroke-width="2"/></svg>
+    </a>
+  </div>
+</section>
+<section class="posts">
+  <div class="card"><h3>Operation Safed Sagar</h3><p>The untold story of the Kargil War — a Netflix series directed by Onir, starring Abhishek Singh & Karan Singh. Coming soon only on Netflix.</p></div>
+  <div class="card"><h3>#DiesIrae</h3><p>Mollywood horror hits ₹25 Cr worldwide in 2 days — Day 2 > Day 1. Strong word of mouth drives weekend momentum.</p></div>
+  <div class="card"><h3>BookMyShow Insights</h3><p>#DiesIrae leads ticket sales with 246.9K tickets in 24 hours, followed by #BahubaliTheEpic & #MassJathara.</p></div>
+  <div class="card"><h3>Netflix Expands</h3><p>Netflix opens its second India office in Hyderabad’s Hi-Tec City — strengthening its South India presence.</p></div>
+</section>
+<footer>
+  <p>contact@letscinema.com</p>
+  <small>© 2025 LetsCinema</small>
+</footer>
 </body>
 </html>
