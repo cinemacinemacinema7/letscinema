@@ -4,125 +4,86 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LetsCinema — The trusted name for cinema updates & box office data</title>
-  <meta name="description" content="The biggest South Indian cinema giant on social media — verified numbers, breaking film news, and viral trends.">
+  <meta name="description" content="LetsCinema — The biggest South Indian cinema giant on social media. Verified numbers, breaking film news, and viral trends.">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg-deep:#071b3e;
-      --bg-mid:#0b53b3;
-      --bg-bright:#1364d8;
-      --ink:#eef4ff;
+      --bg1:#0a1842;
+      --bg2:#0b53b3;
+      --bg3:#0d2f79;
+      --ink:#f5f8ff;
       --muted:#cfe0ff;
-      --card:rgba(13,46,102,.55);
       --stroke:#2a6adf;
-      --chip:rgba(22,68,158,.6);
-      --glow:rgba(52,132,255,.35);
+      --glass:rgba(15,45,110,.45);
       --shadow:0 30px 80px rgba(0,0,0,.35);
       --radius:18px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
+    html,body{min-height:100%}
     body{
-      margin:0;
-      color:var(--ink);
+      margin:0; color:var(--ink);
       font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;
-      line-height:1.6;
+      line-height:1.65;
       background:
-        radial-gradient(1100px 700px at 15% -10%, var(--bg-bright), transparent 60%),
+        radial-gradient(1200px 700px at 15% -10%, var(--bg2), transparent 60%),
         radial-gradient(900px 700px at 110% 10%, #0a4aa3, transparent 60%),
-        linear-gradient(140deg, #061536, var(--bg-mid) 38%, #0d4eac 62%, var(--bg-deep));
-      background-attachment:fixed;
+        linear-gradient(140deg, #071538, var(--bg2) 38%, var(--bg1) 62%);
+      background-attachment: fixed;
+      overflow-x:hidden;
     }
+    /* subtle animated sheen */
+    @keyframes ambient {
+      0%,100% { background-position: 50% 0%; }
+      50% { background-position: 50% 100%; }
+    }
+    body{background-size:200% 200%; animation: ambient 22s ease-in-out infinite;}
+    @media (prefers-reduced-motion:reduce){ body{animation:none} }
 
-    /* Subtle animated highlight */
-    .highlight{
-      position:fixed; inset:0; pointer-events:none; z-index:0;
-    }
-    .highlight::before{
-      content:''; position:absolute; left:50%; top:30%;
-      width:900px; height:900px; transform:translate(-50%,-50%);
-      background:radial-gradient(closest-side, rgba(255,255,255,.08), transparent 70%);
-      filter:blur(20px);
-      animation:drift 18s ease-in-out infinite;
-    }
-    @keyframes drift{
-      0%,100%{transform:translate(-50%,-50%)}
-      50%{transform:translate(calc(-50% + 14px), calc(-50% - 10px))}
-    }
-    @media (prefers-reduced-motion:reduce){
-      .highlight::before{animation:none}
-    }
-
-    .wrap{position:relative; z-index:1; width:min(1080px,92%); margin:0 auto; padding:56px 0 72px}
+    .wrap{width:min(1100px,92%); margin-inline:auto; padding:56px 0 80px}
 
     /* HERO */
-    .hero{display:flex; flex-direction:column; align-items:center; text-align:center; gap:18px; margin-bottom:26px}
-    .brand{
-      width:220px; max-width:60vw; opacity:.92;
-      filter: drop-shadow(0 14px 28px rgba(0,0,0,.35));
-    }
-    h1.title{
-      margin:8px 0 6px;
-      font-weight:800;
-      font-size:clamp(22px, 2.6vw, 30px);
-      letter-spacing:.2px;
-      background:linear-gradient(90deg,#fff, #dfe9ff 40%, #b8d0ff);
-      -webkit-background-clip:text; background-clip:text; color:transparent;
-    }
-
-    /* Social row */
-    .socials{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin:10px 0 4px}
-    .chip{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 14px; border-radius:999px;
-      background:var(--chip); border:1px solid var(--stroke);
-      box-shadow:0 10px 24px var(--glow);
-      text-decoration:none; color:#fff; font-weight:600; font-size:14px;
-      transition:.2s transform ease;
-    }
+    .hero{display:flex; flex-direction:column; align-items:center; text-align:center; gap:18px; margin-bottom:40px}
+    .brand{width:210px; max-width:55vw; opacity:.9; filter:drop-shadow(0 16px 36px rgba(0,0,0,.45))}
+    .title{margin:8px 0 14px; font-weight:800; font-size:clamp(22px,2.6vw,32px);
+      letter-spacing:.2px; background:linear-gradient(90deg,#fff,#dfe9ff 40%,#bfd0ff);
+      -webkit-background-clip:text; background-clip:text; color:transparent;}
+    .socials{display:flex; gap:12px; flex-wrap:wrap; justify-content:center}
+    .chip{display:inline-flex; align-items:center; gap:10px; padding:10px 14px;
+      border-radius:999px; border:1px solid var(--stroke); background:rgba(22,68,158,.6);
+      color:#fff; text-decoration:none; font-weight:600; font-size:14px; box-shadow:0 10px 24px rgba(52,132,255,.25); transition:transform .2s ease}
     .chip:hover{transform:translateY(-1px)}
     .chip svg{width:18px; height:18px; fill:#fff}
+    .email{margin-top:10px; color:var(--muted); font-size:14px}
 
-    .email{margin:6px 0 24px; color:var(--muted); font-size:14px}
-
-    /* Content cards */
-    .grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:18px;
-    }
-    .card{
-      background:var(--card);
+    /* SINGLE PREMIUM SECTION */
+    .panel{
+      margin-top:34px;
+      background:var(--glass);
       border:1px solid var(--stroke);
       border-radius:var(--radius);
-      padding:22px 22px;
       box-shadow:var(--shadow);
-      backdrop-filter:saturate(120%) blur(.6px);
+      backdrop-filter:saturate(120%) blur(1px);
+      padding: clamp(18px, 3.5vw, 34px);
       text-align:center;
     }
-    .card p{margin:0; font-size:clamp(15px,1.55vw,17px)}
-    .card strong{font-weight:800}
+    .panel p{margin:0; font-size:clamp(15px,1.55vw,18px)}
+    .panel p + p{margin-top:14px}
+    .panel strong{font-weight:800}
+
+    /* Divider */
+    .rule{height:1px; background:linear-gradient(90deg,rgba(255,255,255,.0),rgba(255,255,255,.7),rgba(255,255,255,.0)); margin:16px auto; width:60%}
 
     /* Footer spacer */
-    .spacer{height:24px}
-
-    /* Responsive breathing room */
-    @media (min-width: 900px){
-      .grid{gap:20px}
-      .card{padding:26px 28px}
-    }
+    .spacer{height:36px}
   </style>
 </head>
 <body>
-  <div class="highlight" aria-hidden="true"></div>
-
   <main class="wrap">
-    <section class="hero">
+    <section class="hero" aria-label="Intro">
       <img src="assets/logo.jpg" class="brand" alt="LetsCinema logo">
       <h1 class="title">The trusted name for cinema updates &amp; box office data.</h1>
-
-      <div class="socials" aria-label="Social links">
-        <a class="chip" href="https://x.com/letscinema" target="_blank" rel="noopener" aria-label="X (formerly Twitter)">
+      <nav class="socials" aria-label="Social links">
+        <a class="chip" href="https://x.com/letscinema" target="_blank" rel="noopener" aria-label="X">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20" stroke="#fff" stroke-width="2"/></svg>
           x.com/letscinema
         </a>
@@ -130,24 +91,16 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10z"/></svg>
           instagram.com/letscinema
         </a>
-      </div>
-
+      </nav>
       <div class="email">Email for collabs — contact@letscinema.com</div>
     </section>
 
-    <section class="grid" aria-label="About LetsCinema">
-      <article class="card">
-        <p><strong>The biggest South Indian cinema giant on social media.</strong></p>
-      </article>
-      <article class="card">
-        <p>LetsCinema is where Tamil, Telugu, Malayalam, Kannada, and Hindi cinema unite — a powerhouse that delivers verified numbers, breaking film news, and viral trends faster than anyone else.</p>
-      </article>
-      <article class="card">
-        <p>Based in Mumbai, we’ve grown into the most trusted and most followed cinema media brand — shaping the conversation from fans to filmmakers, from India to the world.</p>
-      </article>
-      <article class="card">
-        <p>Since 2019, LetsCinema has stood as the undisputed giant of Indian cinema online — where every blockbuster begins its buzz and every record finds its voice.</p>
-      </article>
+    <section class="panel" aria-label="About LetsCinema">
+      <p><strong>The biggest South Indian cinema giant on social media.</strong></p>
+      <div class="rule"></div>
+      <p>LetsCinema is where Tamil, Telugu, Malayalam, Kannada, and Hindi cinema unite — a powerhouse that delivers verified numbers, breaking film news, and viral trends faster than anyone else.</p>
+      <p>Based in Mumbai, we’ve grown into the most trusted and most followed cinema media brand — shaping the conversation from fans to filmmakers, from India to the world.</p>
+      <p>Since 2019, LetsCinema has stood as the undisputed giant of Indian cinema online — where every blockbuster begins its buzz and every record finds its voice.</p>
     </section>
 
     <div class="spacer"></div>
